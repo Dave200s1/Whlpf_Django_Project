@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Home Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: gray;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    h1 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+    
+    .option i {
+      font-size: 40px;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div class="library-image"></div>
+  <h1>Welcome to the Library!</h1>
+  <div class="options">
+    <div class="option">
+      <a href="search.html"><i class="fas fa-search"></i></a>
+      <span>Search</span>
+    </div>
+    <div class="option">
+      <a href="borrow.html"><i class="fas fa-book"></i></a>
+      <span>Borrow</span>
+    </div>
+    <div class="option">
+      <a href="update.html"><i class="fas fa-calendar-alt"></i></a>
+      <span>Update Date</span>
+    </div>
+    <div class="option">
+      <a href="delete.html"><i class="fas fa-trash"></i></a>
+      <span>Delete</span>
+    </div>
+    <div class="option">
+      <a href="list.html"><i class="fas fa-list"></i></a>
+      <span>List Books</span>
+    </div>
+    <div class="option">
+      <a href="bookDetails.html"><i class="fas fa-info-circle"></i></a>
+      <span>Book Details</span>
+    </div>
+  </div>
+</body>
+</html>
