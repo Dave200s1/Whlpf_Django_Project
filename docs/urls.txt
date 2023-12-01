@@ -1,0 +1,12 @@
+
+/ - home page
+/login/ - login page
+
+/catalog/books/ - all books
+/catalog/book/<id>/ - book details
+/catalog/authors/ - all authors
+/catalog/author/<id>/ - author details
+
+/user/id/ - user profile
+/user/borrowed/ - borrowed books by user
+/user/recommend/ - borrowed books by user

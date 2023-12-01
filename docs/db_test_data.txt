@@ -1,0 +1,19 @@
+Bibliotheksverwaltung
+
+Es handelt sich um eine Plattform zur Verwaltung von Büchern in einer Bibliothek mit Benutzerprofilen mit Ausleihstatus und einem Katalog von Büchern nach Genre, Autor und Thema.
+
+Must-Have
+- Bücher-Katalog (Genres, Autoren, Themen) mit Suche
+- Benutzerprofile mit Ausleih-Management (Ausgeliehenen Büchern mit Rückgabedaten)
+
+Nice-To-Have
+- Bücher bewerten & Empfehlungen
+
+title: The Martian
+author: Andy Weir
+cover:
+description: "A survival story for the 21st century and the international bestseller behind the major film from Ridley Scott, starring Matt Damon and Jessica Chastain."
+genre: Science fiction
+language: English
+published: 2011
+ISBN: 978-0-8041-3902-1
