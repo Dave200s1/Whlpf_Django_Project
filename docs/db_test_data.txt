@@ -1,0 +1,8 @@
+title: The Martian
+author: Andy Weir
+cover:
+description: "A survival story for the 21st century and the international bestseller behind the major film from Ridley Scott, starring Matt Damon and Jessica Chastain."
+genre: Science fiction
+language: English
+published: 2011
+ISBN: 978-0-8041-3902-1

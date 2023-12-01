@@ -1,0 +1,6 @@
+- User stories (Beschreibung und Jira kanban board)
+- DB models (ERM, RM)
+- DB test data
+- Url list
+- Tests for models, forms, views
+- Wireframes
