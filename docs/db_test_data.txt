@@ -1,14 +1,3 @@
-Bibliotheksverwaltung
-
-Es handelt sich um eine Plattform zur Verwaltung von Büchern in einer Bibliothek mit Benutzerprofilen mit Ausleihstatus und einem Katalog von Büchern nach Genre, Autor und Thema.
-
-Must-Have
-- Bücher-Katalog (Genres, Autoren, Themen) mit Suche
-- Benutzerprofile mit Ausleih-Management (Ausgeliehenen Büchern mit Rückgabedaten)
-
-Nice-To-Have
-- Bücher bewerten & Empfehlungen
-
 title: The Martian
 author: Andy Weir
 cover:
