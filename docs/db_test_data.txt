@@ -1,8 +1,14 @@
-title: The Martian
-author: Andy Weir
-cover:
-description: "A survival story for the 21st century and the international bestseller behind the major film from Ridley Scott, starring Matt Damon and Jessica Chastain."
-genre: Science fiction
-language: English
-published: 2011
+title: "Der Marsianer"
+author: "Andy Weir"
+media_type: Buch
+description: "Eine Überlebensgeschichte für das 21. Jahrhundert und der internationale Bestseller."
+cover_image = "Der_Marsianer.jpg"
+genre: "Science-Fiction"
+language: Englisch
+release_year: 2011
 ISBN: 978-0-8041-3902-1
+borrowed: False
+reserved: False
+
+Languages = ["Englisch", "Spanisch", "Französisch", "Deutsch", "Italienisch", "Chinesisch", "Japanisch"]
+Genres = ["Fiktion", "Thriller", "Romantik", "Science-Fiction", "Fantasy", "Mystery", "Biografie"]
