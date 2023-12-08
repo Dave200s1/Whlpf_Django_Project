@@ -9,7 +9,7 @@ class CustomUser(AbstractUser):
 class Media(models.Model):
     title = models.CharField(max_length=200)
     def __str__(self): return self.title
-    author = models.CharField(max_length=200)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     media_type = models.CharField(choices=MediaType.choices, max_length=10)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
@@ -32,6 +32,11 @@ class Genre(models.Model):
 
 
 class Language(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self): return self.name
+
+
+class Autor(models.Model):
     name = models.CharField(max_length=100)
     def __str__(self): return self.name
 
