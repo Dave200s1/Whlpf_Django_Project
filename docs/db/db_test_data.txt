@@ -1,0 +1,27 @@
+Languages = ["Englisch", "Spanisch", "Französisch", "Deutsch", "Italienisch", "Chinesisch", "Japanisch"]
+Genres = ["Fiktion", "Thriller", "Romantik", "Science-Fiction", "Fantasy", "Mystery", "Biografie", "Komödie", "Drama"]
+
+Book
+title: "Der Marsianer"
+author: "Andy Weir"
+description: "Eine Überlebensgeschichte für das 21. Jahrhundert und der internationale Bestseller."
+cover_image = "Der_Marsianer.jpg"
+genre: "Science-Fiction"
+language: Englisch
+release_year: 2011
+ISBN: 978-0-8041-3902-1
+borrowed: False
+reserved: False
+
+Film
+title: "May December"
+regie: "Todd Haynes"
+description: "Middle aged Gracie lives a happy, well settled life with her husband."
+cover_image = "May_December.jpg"
+genre: "Komödie", "Drama"
+language: Englisch
+release_year: 2023
+FSK: 16
+IMDb: 7.1
+borrowed: False
+reserved: False

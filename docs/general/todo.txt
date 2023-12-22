@@ -1,4 +1,4 @@
-- User stories (Beschreibung und Jira kanban board)
++ User stories (Beschreibung und Jira kanban board)
 - Tests for models, forms, views
 - ERM und DB models
 - DB test data

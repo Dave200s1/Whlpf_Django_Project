@@ -1,0 +1,72 @@
+Table CustomUser {
+  id int [pk]
+}
+
+Table Genre {
+  id int [pk]
+  name varchar
+}
+
+Table Language {
+  id int [pk]
+  name varchar
+}
+
+Table Autor {
+  id int [pk]
+  name varchar
+}
+
+Table Regie {
+  id int [pk]
+  name varchar
+}
+
+Table Media {
+  id int [pk]
+  title varchar
+  genre_id int [ref: > Genre.id]
+  language_id int [ref: > Language.id]
+  description text
+  cover_image varchar
+  release_year int
+  borrowed boolean
+  reserved boolean
+  discriminator varchar // Zeigt an, ob es sich um ein Buch oder einen Film handelt
+}
+
+Table Book {
+  id int [pk]
+  media_id int [ref: > Media.id]
+  author_id int [ref: > Autor.id]
+}
+
+Table Film {
+  id int [pk]
+  media_id int [ref: > Media.id]
+  regie_id int [ref: > Regie.id]
+  FSK int
+  IMDb int
+}
+
+Table UserBorrowed {
+  id int [pk]
+  user_id int [ref: > CustomUser.id]
+  media_id int [ref: > Media.id]
+  return_date date
+}
+
+Table UserReserved {
+  id int [pk]
+  user_id int [ref: > CustomUser.id]
+  media_id int [ref: > Media.id]
+  reserved_till datetime
+}
+
+Table UserReview {
+  id int [pk]
+  user_id int [ref: > CustomUser.id]
+  media_id int [ref: > Media.id]
+  rating int
+  review_text text
+}
