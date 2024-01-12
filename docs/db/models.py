@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
-class CustomUser(AbstractUser):
-    locked = models.BooleanField(default=False)
+MEDIA_CHOICES = [('book', 'Book'), ('film', 'Film')]
 
 class Media(models.Model):
     title = models.CharField(max_length=200)
+    media_type = models.CharField(max_length=20, choices=MEDIA_CHOICES)
     genre = models.ForeignKey('Genre', on_delete=models.CASCADE)
     language = models.ForeignKey('Language', on_delete=models.CASCADE)
     description = models.TextField()
@@ -27,7 +27,7 @@ class Book(Media):
 class Film(Media):
     regie = models.ForeignKey('Regie', on_delete=models.CASCADE)
     FSK = models.IntegerField()
-    IMDb = models.IntegerField()
+    IMDb = models.DecimalField(max_digits=3, decimal_places=1)
 
     def __str__(self):
         return self.title
@@ -44,7 +44,9 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
-
+class CustomUser(AbstractUser):
+    locked = models.BooleanField(default=False)
+    
 class Autor(models.Model):
     name = models.CharField(max_length=100)
     
@@ -59,7 +61,7 @@ class UserBorrowed(models.Model):
 class UserReserved(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     media = models.ForeignKey(Media, on_delete=models.CASCADE)
-    reserved_till = models.DateTimeField()
+    reserved_till = models.DateField()
 
 class UserReview(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)

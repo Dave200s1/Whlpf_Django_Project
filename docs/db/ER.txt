@@ -32,7 +32,7 @@ Table Media {
   release_year int
   borrowed boolean
   reserved boolean
-  discriminator varchar // Zeigt an, ob es sich um ein Buch oder einen Film handelt
+  media_type varchar
 }
 
 Table Book {
