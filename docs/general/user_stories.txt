@@ -1,5 +1,5 @@
 Als Administrator möchte ich:
-- Daten der Website ansehen, hinzufügen, ändern oder löschen können, um der Website verwalten zu können.
+- Daten der Website ansehen, hinzufügen, ändern oder löschen können, um der Website verwalten zu können. (Hinzufügen Bildschirm felhlt)
 - Benutzerkonten ansehen, hinzufügen, ändern (inkl. Sperren/Freigeben) oder löschen können, um der Benutzerkonten verwalten können.
 - nach Benutzerkonten suchen und nach Name, Erscheinungsjahr filtern können, um die Benutzerkonten finden zu können.
 - Liste der Benutzerkonten, die Medien mit abgelaufener Frist besitzen.
