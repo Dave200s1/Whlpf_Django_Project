@@ -1,5 +1,5 @@
 import unittest
-from MovieListView_test import MovieListView
+from MovieListView import MovieListView
 
 
 class MovieListViewTest(unittest.TestCase):
@@ -17,9 +17,9 @@ class MovieListViewTest(unittest.TestCase):
         ]
         #Assert
         self.assertEqual(len((movies)),3)
-        self.assertEqual(movies[0].title, "Titanic")
-        self.assertEqual(movies[1].title,"Joker")
-        self.assertEqual(movies[2].title,"John Wick")
+        self.assertEqual(movies[0].title, "Movie A")
+        self.assertEqual(movies[1].title,"Movie B")
+        self.assertEqual(movies[2].title,"Movie C")
         
         
     def test_sort_movies_aphabetically(self):
