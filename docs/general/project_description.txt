@@ -5,7 +5,7 @@ Das Django-Projekt für die Bibliotheksverwaltung wird diese Funktionalitäten e
 Implementierungsmethode: Das Projekt wird unter Verwendung des Test Driven Development (TDD) Ansatzes entwickelt, wobei das Pytest-Modul verwendet wird.
 
 Rollen: Administrator, Bibliothekar, Benutzer
-Medientypen: Bücher, Filme, Spiele (im Verterem als Medien bezeichnet)
+Medientypen: Bücher, Filme (im Verterem als Medien bezeichnet)
 
 Anforderungen:
 1. Katalog mit Suchfunktion: Titel, Autor, Genre, Sprache, kurze Beschreibung, Verfügbarkeit, Erscheinungsjahr.
