@@ -1,16 +1,62 @@
-import pytest
-from django.urls import reverse
-from django.test import RequestFactory
-# Hier MovieView importieren !
+import unittest
+from MovieListView_test import MovieListView
 
-#Test of Data from Movie can be outputed
-def test_if_data_of_movie_is_outputed_correctly():
-    #Arrange
-    test_object = MovieView()
-    request = RequestFactory().get(reverse('movie-info'))
-    #Act
-    response = movie_view.get_info(request)
+
+class MovieListViewTest(unittest.TestCase):
     
-    #Assert
-    assert response.status_code = 200
-    assert 'Expected Data' in response.content.decode('utf-8')
+    def test_get_movies(self):
+        #Arrange
+        test_object = MovieListViewTest()
+        #Act
+        #movies = test_object.get_moview()
+        movies = [
+            {"title": "Movie A", "genre": "Action"},
+            {"title": "Movie B", "genre": "Comedy"},
+            {"title": "Movie C", "genre": "Drama"},
+            {"title": "Movie D", "genre": "Action"}
+        ]
+        #Assert
+        self.assertEqual(len((movies)),3)
+        self.assertEqual(movies[0].title, "Titanic")
+        self.assertEqual(movies[1].title,"Joker")
+        self.assertEqual(movies[2].title,"John Wick")
+        
+        
+    def test_sort_movies_aphabetically(self):
+        #Arrange
+        test_object = MovieListViewTest()
+        #Act
+        result = test_object.sort_alpahbetically()
+        movies = [
+            {"title": "Movie A", "genre": "Action"},
+            {"title": "Movie B", "genre": "Comedy"},
+            {"title": "Movie C", "genre": "Drama"},
+            {"title": "Movie D", "genre": "Action"}
+        ]
+        #Assert
+        self.assertEqual(sorted_movies[0]["title"], "Movie A")
+        self.assertEqual(sorted_movies[1]["title"], "Movie B")
+        self.assertEqual(sorted_movies[2]["title"], "Movie C")
+        
+    def test_sort_moviews_genre(self):
+        #Arrange
+        test_object = MovieListViewTest()
+     
+        result = test_object.sort_genre()
+        movie_list = [
+            {"title": "Movie A", "genre": "Action"},
+            {"title": "Movie B", "genre": "Comedy"},
+            {"title": "Movie C", "genre": "Drama"},
+            {"title": "Movie D", "genre": "Action"}
+        ]
+        selected_genre = "Action"
+        #Act
+        sorted_movie_list = test_object.sort_genre(movie_list,selected_genre)
+        
+        #Assert
+        self.assertEqual(len(sorted_movies), 2)
+        self.assertEqual(sorted_movies[0]["title"], "Movie A")
+        self.assertEqual(sorted_movies[1]["title"], "Movie D")
+        
+if __name__ == 'main':
+    unittest.main()
