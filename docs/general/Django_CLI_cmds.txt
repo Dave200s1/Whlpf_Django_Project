@@ -1,0 +1,6 @@
+Tests
+python manage.py test									Run the tests
+python manage.py test --verbosity 2						Run with additional test info
+python manage.py test tests.test_models					Run the specified module
+python manage.py test tests.test_models.Class			Run the specified class
+python manage.py test tests.test_models.Class.test_one	Run the specified method
