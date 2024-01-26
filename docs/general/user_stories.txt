@@ -1,6 +1,6 @@
 Als Administrator möchte ich:
 - Daten/Medien der Website ansehen, hinzufügen, ändern oder löschen können, um der Website verwalten zu können. (Fertig)
-- Benutzerkonten ansehen, hinzufügen, ändern (inkl. Sperren/Freigeben) oder löschen können, um der Benutzerkonten verwalten können.
+- Benutzerkonten ansehen, hinzufügen, ändern (inkl. Sperren/Freigeben) oder löschen können, um der Benutzerkonten verwalten können. (Fertig)
 - nach Benutzerkonten suchen und nach Name, Erscheinungsjahr filtern können, um die Benutzerkonten finden zu können.
 - Liste der Benutzerkonten, die Medien mit abgelaufener Frist besitzen.
 - nach Medien-Titel suchen und nach Titel, Autor, Medientyp, Genre, Sprache, Verfügbarkeit, Erscheinungsjahr, ISBN filtern können, um die Medien finden zu können.

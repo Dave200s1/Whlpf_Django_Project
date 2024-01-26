@@ -1,12 +1,35 @@
+# URLs
 
-/ - home page
-/login/ - login page
+/					Homepage
+/register/			Registrieren
+/login/				Anmelden
+/logout/			Abmelden
 
-/catalog/books/ - all books
-/catalog/book/<id>/ - book details
-/catalog/authors/ - all authors
-/catalog/author/<id>/ - author details
+Katalog:
+/catalog/medias/			medias (/search/ for search and filter?)
 
-/user/id/ - user profile
-/user/borrowed/ - borrowed books by user
-/user/recommend/ - borrowed books by user
+Benutzer:
+/users/<user_id>/						user profile
+/users/<user_id>/borrowed/				borrowed medias
+/users/<user_id>/reserved/				reserved medias
+/users/<user_id>/recommendations/		recommended medias for user
+/users/<user_id>/ratings/				rated medias
+/users/<user_id>/ratings/<rating_id>/	rating
+
+Administrator:
+/admin/users/									users (/search/ for search and filter?)
+/admin/users/<user_id>/							user details
+/admin/users/<user_id>/borrowed/				borrowed medias
+/admin/users/<user_id>/reserved/				reserved medias
+/admin/users/<user_id>/ratings/					rated medias
+/admin/users/<user_id>/ratings/<rating_id>/		rating
+
+/admin/medias/					medias
+/admin/authors/					authors
+/admin/regies/					regies
+/admin/genres/					genres
+/admin/ratings/					ratings
+/admin/medias/<media_id>/		media details
+/admin/authors/<author_id>/		author details
+/admin/regies/<regie_id>/		regie details
+/admin/genres/<genre_id>/		genre details
