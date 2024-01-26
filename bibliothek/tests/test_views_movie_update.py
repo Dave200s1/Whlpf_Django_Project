@@ -7,8 +7,16 @@ from MovieUpdateView import MovieUpdateViewClass
 class MovieUpdateViewTest(TestCase):
     
     @classmethod
+    #expired date
     def test_update_form_date_field_label(self):
-        pass
+        #Arrange
+        testobject = MovieUpdateViewClass() 
+        #Act
+        
+        result = testobject.check_if_expired(testobject.getDate())
+        #Assert
+        self.assertFalse(result)
+        
     
     def test_update_form_date_too_far_in_future(self):
         pass
