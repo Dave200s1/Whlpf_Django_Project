@@ -4,6 +4,7 @@ from MovieListView import MovieListViewClass
 
 class MovieListViewTest(TestCase):
     
+    @classmethod
     def test_get_movies(self):
         #Arrange
         test_object = MovieListViewTest()
