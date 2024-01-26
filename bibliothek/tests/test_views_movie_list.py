@@ -57,4 +57,3 @@ class MovieListViewTest(TestCase):
         self.assertEqual(len(sorted_movies), 2)
         self.assertEqual(sorted_movies[0]["title"], "Movie A")
         self.assertEqual(sorted_movies[1]["title"], "Movie D")
-        
