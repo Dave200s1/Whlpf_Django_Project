@@ -1,8 +1,8 @@
-import unittest
-from MovieListView import MovieListView
+from  django.test import TestCase
+from MovieListView import MovieListViewClass
 
 
-class MovieListViewTest(unittest.TestCase):
+class MovieListViewTest(TestCase):
     
     def test_get_movies(self):
         #Arrange
@@ -58,5 +58,3 @@ class MovieListViewTest(unittest.TestCase):
         self.assertEqual(sorted_movies[0]["title"], "Movie A")
         self.assertEqual(sorted_movies[1]["title"], "Movie D")
         
-if __name__ == 'main':
-    unittest.main()
