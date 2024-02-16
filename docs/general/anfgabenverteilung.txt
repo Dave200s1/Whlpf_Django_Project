@@ -3,12 +3,12 @@ Andrej: Backend-Entwicklung mit Django und Datenbankdesign (modells)
     Implementierung des Datenmodells
     Implementierung der Funktionen zum Hinzufügen, Ändern und Löschen von Medien, Medientypen, Genres, Sprachen, Autoren
     Implementierung des Katalogs mit Suchfunktion
-    Integration der Admin-Oberfläche für die Verwaltung von Medien und Benutzerkonten
 
 David: Administrator-Funktionen
     Implementierung von View-Tests für die gesamte Anwendung
     Implementierung der Administratorfunktionen (Hinzufügen, Ändern, Löschen von Daten)
     Sicherstellung der Datenintegrität und Fehlerbehandlung in der Anwendung
+    Integration der Admin-Oberfläche für die Verwaltung von Medien und Benutzerkonten
 
 Daniel: Frontend-Entwicklung und Benutzerprofile
     Wireframes der Benutzeroberfläche

@@ -1,0 +1,6 @@
+.idea/
+/venv/
+library/__pycache__/
+tests/__pycache__/
+lib_app/__pycache__/
+lib_app/migrations/__pycache__/
