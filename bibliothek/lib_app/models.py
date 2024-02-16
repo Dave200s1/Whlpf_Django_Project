@@ -26,7 +26,7 @@ class Author(models.Model):
         return self.name
 
 
-class Regie(models.Model):
+class Director(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -41,7 +41,7 @@ class Book(Media):
 
 
 class Film(Media):
-    regie = models.ForeignKey('Regie', on_delete=models.CASCADE)
+    director = models.ForeignKey('Director', on_delete=models.CASCADE)
     FSK = models.IntegerField()
     IMDb = models.DecimalField(max_digits=3, decimal_places=1)
 
