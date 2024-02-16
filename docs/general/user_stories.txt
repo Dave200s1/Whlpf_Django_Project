@@ -9,9 +9,9 @@ Als Administrator möchte ich:
 Als Benutzer möchte ich:
 - ein Konto erstellen können, um Medien ausleihen zu können. (Fertig)
 - nach Medien-Titel suchen und nach Titel, Autor, Medientyp, Genre, Sprache, Verfügbarkeit, Erscheinungsjahr, ISBN filtern können, um die für mich interessante Medien finden zu können. (Fertig)
-- Medien, die derzeit verfügbar sind, reservieren können, um sie auszuleihen.
-- Medien, die derzeit nicht verfügbar sind, vormerken können, um sie zu einem späteren Zeitpunkt auszuleihen.
-- die aktuell ausgeliehenen Medien einsehen können, um zu wissen, wann sie zurückgegeben werden müssen.
+- Medien, die derzeit verfügbar sind, reservieren können, um sie auszuleihen. (Fertig)
+- Medien, die derzeit nicht verfügbar sind, vormerken können, um sie zu einem späteren Zeitpunkt auszuleihen. (Fertig)
+- die aktuell ausgeliehenen Medien einsehen können, um zu wissen, wann sie zurückgegeben werden müssen. (Fertig)
 - (optional) Bewertungen für Medien abgeben und Rezensionen lesen können, um anderen Benutzern bei der Auswahl zu helfen.
 - (optional) personalisierte Empfehlungen auf der Grundlage ihrer Ausleihhistorie und ihrer Bewertungen erhalten, um die für mich relevanten Medien schnell zu finden.
 
