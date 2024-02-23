@@ -63,7 +63,7 @@ class Language(models.Model):
         return self.name
 
 
-class CustomUser(AbstractUser):
+class User(AbstractUser):
     locked = models.BooleanField(default=False)
 
 
