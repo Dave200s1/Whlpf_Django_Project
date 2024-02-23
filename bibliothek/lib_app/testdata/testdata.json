@@ -1,0 +1,216 @@
+{
+"languages": [
+  {"pk": 1, "model": "lib_app.language", "fields": {"name": "Englisch"}},
+  {"pk": 2, "model": "lib_app.language", "fields": {"name": "Spanisch"}},
+  {"pk": 3, "model": "lib_app.language", "fields": {"name": "Französisch"}},
+  {"pk": 4, "model": "lib_app.language", "fields": {"name": "Deutsch"}},
+  {"pk": 5, "model": "lib_app.language", "fields": {"name": "Italienisch"}},
+  {"pk": 6, "model": "lib_app.language", "fields": {"name": "Chinesisch"}},
+  {"pk": 7, "model": "lib_app.language", "fields": {"name": "Japanisch"}}
+],
+"genres": [
+  {"pk": 1, "model": "lib_app.genre", "fields": {"name": "Fiktion"}},
+  {"pk": 2, "model": "lib_app.genre", "fields": {"name": "Thriller"}},
+  {"pk": 3, "model": "lib_app.genre", "fields": {"name": "Romantik"}},
+  {"pk": 4, "model": "lib_app.genre", "fields": {"name": "Science-Fiction"}},
+  {"pk": 5, "model": "lib_app.genre", "fields": {"name": "Fantasy"}},
+  {"pk": 6, "model": "lib_app.genre", "fields": {"name": "Biografie"}},
+  {"pk": 7, "model": "lib_app.genre", "fields": {"name": "Komödie"}}
+],
+"users": [
+  {"pk": 1, "model": "lib_app.user", "fields": {"username": "user1", "password": "password1"}},
+  {"pk": 2, "model": "lib_app.user", "fields": {"username": "user2", "password": "password2"}}
+],
+"authors": [
+  {"pk": 1, "model": "lib_app.author", "fields": {"name": "Andy Weir"}},
+  {"pk": 2, "model": "lib_app.author", "fields": {"name": "J.K. Rowling"}},
+  {"pk": 3, "model": "lib_app.author", "fields": {"name": "Haruki Murakami"}},
+  {"pk": 4, "model": "lib_app.author", "fields": {"name": "Agatha Christie"}},
+  {"pk": 5, "model": "lib_app.author", "fields": {"name": "George Orwell"}}
+],
+"directors": [
+  {"pk": 1, "model": "lib_app.director", "fields": {"name": "Christopher Nolan"}},
+  {"pk": 2, "model": "lib_app.director", "fields": {"name": "Quentin Tarantino"}},
+  {"pk": 3, "model": "lib_app.director", "fields": {"name": "Steven Spielberg"}},
+  {"pk": 4, "model": "lib_app.director", "fields": {"name": "Hayao Miyazaki"}},
+  {"pk": 5, "model": "lib_app.director", "fields": {"name": "Martin Scorsese"}}
+],
+"books": [
+  {
+    "pk": 1,
+    "model": "lib_app.book",
+    "fields": {
+      "title": "Der Marsianer",
+      "author": 1,
+      "description": "Eine Überlebensgeschichte für das 21. Jahrhundert und der internationale Bestseller.",
+      "cover_image": "Der_Marsianer.jpg",
+      "genre": 4,
+      "language": 1,
+      "release_year": 2011,
+      "ISBN": "978-0-8041-3902-1",
+      "borrowed": false,
+      "reserved": false,
+      "media_type": "book"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "lib_app.book",
+    "fields": {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": 2,
+      "description": "The story of a young boy, Harry Potter, who discovers that he is a wizard and is invited to attend Hogwarts School of Witchcraft and Wizardry.",
+      "cover_image": "Harry_Potter_and_the_Philosophers_Stone.jpg",
+      "genre": 5,
+      "language": 2,
+      "release_year": 1997,
+      "ISBN": "978-0-7475-3269-6",
+      "borrowed": true,
+      "reserved": false,
+      "media_type": "book"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "lib_app.book",
+    "fields": {
+      "title": "1984",
+      "author": 5,
+      "description": "A dystopian novel by George Orwell.",
+      "cover_image": "1984.jpg",
+      "genre": 4,
+      "language": 1,
+      "release_year": 1949,
+      "ISBN": "978-0-452-28423-4",
+      "borrowed": false,
+      "reserved": false,
+      "media_type": "book"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "lib_app.book",
+    "fields": {
+      "title": "The Da Vinci Code",
+      "author": 6,
+      "description": "A mystery thriller novel by Dan Brown.",
+      "cover_image": "da_vinci_code.jpg",
+      "genre": 2,
+      "language": 2,
+      "release_year": 2003,
+      "ISBN": "978-0-385-50420-5",
+      "borrowed": false,
+      "reserved": false,
+      "media_type": "book"
+    }
+  }
+],
+"films": [
+    {
+      "pk": 1,
+      "model": "lib_app.film",
+      "fields": {
+        "title": "May December",
+        "director": 4,
+        "description": "Middle aged Gracie lives a happy, well settled life with her husband.",
+        "cover_image": "May_December.jpg",
+        "genre": 7,
+        "language": 1,
+        "release_year": 2023,
+        "FSK": 16,
+        "IMDb": 7.1,
+        "borrowed": false,
+        "reserved": false,
+        "media_type": "film"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "lib_app.film",
+      "fields": {
+        "title": "Inception",
+        "director": 1,
+        "description": "A thief who enters the dreams of others to steal their secrets from their subconscious.",
+        "cover_image": "inception.jpg",
+        "genre": 2,
+        "language": 1,
+        "release_year": 2010,
+        "FSK": 12,
+        "IMDb": 8.8,
+        "borrowed": false,
+        "reserved": true,
+        "media_type": "film"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "lib_app.film",
+      "fields": {
+        "title": "Pulp Fiction",
+        "director": 2,
+        "description": "Various interrelated stories of criminals in Los Angeles.",
+        "cover_image": "pulp_fiction.jpg",
+        "genre": 5,
+        "language": 1,
+        "release_year": 1994,
+        "FSK": 16,
+        "IMDb": 8.9,
+        "borrowed": true,
+        "reserved": false,
+        "media_type": "film"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "lib_app.film",
+      "fields": {
+        "title": "The Shawshank Redemption",
+        "director": 5,
+        "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "cover_image": "shawshank_redemption.jpg",
+        "genre": 4,
+        "language": 1,
+        "release_year": 1994,
+        "FSK": 12,
+        "IMDb": 9.3,
+        "borrowed": false,
+        "reserved": false,
+        "media_type": "film"
+      }
+    }
+  ],
+"user_borrowed": [
+    {
+      "pk": 1,
+      "model": "lib_app.borrowed",
+      "fields": {
+        "user": 1,
+        "media": "Der Marsianer",
+        "return_date": "2024-03-01"
+      }
+    }
+  ],
+  "user_reserved": [
+    {
+      "pk": 1,
+      "model": "lib_app.reserved",
+      "fields": {
+        "user": 1,
+        "media": "May December",
+        "reserved_till": "2024-03-01"
+      }
+    }
+  ],
+  "user_reviews": [
+    {
+      "pk": 1,
+      "model": "lib_app.review",
+      "fields": {
+        "user": 2,
+        "media": "Der Marsianer",
+        "rating": 5,
+        "review_text": "Absolutely great"
+      }
+    }
+  ]
+}
