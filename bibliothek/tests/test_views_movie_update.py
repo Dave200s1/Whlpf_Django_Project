@@ -2,7 +2,7 @@ from  django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from MovieUpdateViewClass import MovieUpdateViewClass
+from lib_app.MovieUpdateViewClass import MovieUpdateViewClass
 
 class MovieUpdateViewTest(TestCase):
     

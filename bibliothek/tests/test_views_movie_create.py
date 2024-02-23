@@ -1,26 +1,41 @@
 from django.test import TestCase
 from django.urls import reverse
-from django.utils import timezone
-from lib_app.models import Film  
-from datetime import timedelta
+from lib_app.models import Film
+from django.contrib.auth.models import User
 
-class MovieCreateViewClassTestCase(TestCase):
-    
-    def setUp(self):
-        self.film = Film.objects.create(title="Interstellar", director="Christopher Nolan", FSK=12, IMDb=8.6)
-        
-    def test_create_movie_view(self):
-        # Arrange
-        title = "Interstellar"
-        release_date = timezone.now().date() - timedelta(days=365)
-        director = "Christopher Nolan"
-        FSK = 12
-        IMDb = 8.6
-        
-        # Act
-        response = self.client.post(reverse('film-create'), {'title': title, 'release_date': release_date, 'director': director, 'FSK': FSK, 'IMDb': IMDb})
-        
-        # Assert
-        self.assertEqual(response.status_code, 302)  # Assuming the view redirects after successful creation
-        self.assertTrue(Film.objects.filter(title=title, release_date=release_date, director=director, FSK=FSK, IMDb=IMDb).exists())
+class MovieCreateViewTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        # Create a test user
+        test_user = User.objects.create_user(username='testuser', password='12345')
 
+    def test_movie_create_view(self):
+        # Log in as the test user
+        self.client.login(username='testuser', password='12345')
+
+        # Access the movie creation view
+        response = self.client.get(reverse('movie-create'))
+
+        # Check that the view returns a 200 status code
+        self.assertEqual(response.status_code, 200)
+
+        # Create a movie using the view
+        response = self.client.post(reverse('movie-create'), {
+            'title': 'Test Movie',
+            'director': 'Test Director',
+            'FSK': 12,
+            'IMDb': 7.5,
+            'genre': 'Test Genre',
+            'language': 'Test Language',
+            'description': 'Test Description',
+            'cover_image': 'test_image.jpg',
+            'release_year': 2022
+        })
+
+        # Check that the movie is created successfully
+        self.assertEqual(response.status_code, 302)  # Assuming a successful creation redirects to another page
+
+        # Optionally, you can further test the created movie's details and attributes
+        created_movie = Film.objects.get(title='Test Movie')
+        self.assertEqual(created_movie.director, 'Test Director')
+        # Add more assertions as needed
