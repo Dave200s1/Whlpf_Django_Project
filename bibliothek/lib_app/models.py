@@ -1,5 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+# Import the Group model from django.contrib.auth.models
+from django.contrib.auth.models import Group
+from django.contrib.auth.models import Permission
+
+
 
 MEDIA_CHOICES = [('book', 'Book'), ('film', 'Film')]
 
@@ -62,15 +67,26 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
-
+#previous version
+#class CustomUser(AbstractUser):
+    #locked = models.BooleanField(default=False)
 class CustomUser(AbstractUser):
-    locked = models.BooleanField(default=False)
+    groups = models.ManyToManyField(Group, related_name='customuser_groups')
+    user_permissions = models.ManyToManyField(Permission, related_name='customuser_permissions')
+
+class ConcreteMedia(Media):
+    pass
 
 
 class UserBorrowed(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    media = models.ForeignKey(Media, on_delete=models.CASCADE)
+    media = models.ForeignKey(ConcreteMedia, on_delete=models.CASCADE)
     return_date = models.DateField()
+#previous version
+#class UserBorrowed(models.Model):
+    #user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    #media = models.ForeignKey(Media, on_delete=models.CASCADE)
+    #return_date = models.DateField()
 
 
 class UserReserved(models.Model):
