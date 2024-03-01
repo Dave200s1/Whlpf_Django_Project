@@ -20,8 +20,8 @@ class Media(models.Model):
     borrowed = models.BooleanField(default=False)
     reserved = models.BooleanField(default=False)
 
-    class Meta:
-        abstract = True
+    #class Meta:
+        #abstract = True
 
 
 class Author(models.Model):
@@ -67,7 +67,6 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
-<<<<<<< HEAD
 #previous version
 #class CustomUser(AbstractUser):
     #locked = models.BooleanField(default=False)
@@ -77,11 +76,6 @@ class CustomUser(AbstractUser):
 
 class ConcreteMedia(Media):
     pass
-=======
-
-class User(AbstractUser):
-    locked = models.BooleanField(default=False)
->>>>>>> 815f6870dc686b7010d770b5da94f3e2d20ebc5b
 
 
 class UserBorrowed(models.Model):
