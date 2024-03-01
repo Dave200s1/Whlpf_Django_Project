@@ -1,9 +1,6 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
-# Import the Group model from django.contrib.auth.models
-from django.contrib.auth.models import Group
-from django.contrib.auth.models import Permission
-
 
 
 MEDIA_CHOICES = [('book', 'Book'), ('movie', 'Movie')]
@@ -40,6 +37,7 @@ class Director(models.Model):
 
 class Book(Media):
     author = models.ForeignKey('Author', on_delete=models.CASCADE)
+    ISBN = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
@@ -67,36 +65,25 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
-#previous version
-#class CustomUser(AbstractUser):
-    #locked = models.BooleanField(default=False)
-class CustomUser(AbstractUser):
-    groups = models.ManyToManyField(Group, related_name='customuser_groups')
-    user_permissions = models.ManyToManyField(Permission, related_name='customuser_permissions')
 
-class ConcreteMedia(Media):
-    pass
+class User(AbstractUser):
+    locked = models.BooleanField(default=False)
 
 
 class UserBorrowed(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    media = models.ForeignKey(ConcreteMedia, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    media = models.ForeignKey(Media, on_delete=models.CASCADE)
     return_date = models.DateField()
-#previous version
-#class UserBorrowed(models.Model):
-    #user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    #media = models.ForeignKey(Media, on_delete=models.CASCADE)
-    #return_date = models.DateField()
 
 
 class UserReserved(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     media = models.ForeignKey(Media, on_delete=models.CASCADE)
     reserved_till = models.DateField()
 
 
 class UserReview(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     media = models.ForeignKey(Media, on_delete=models.CASCADE)
     rating = models.IntegerField()
     review_text = models.TextField()
