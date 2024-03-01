@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from lib_app.models import Film
+from lib_app.models import Movie
 from django.contrib.auth.models import User
 
 class MovieCreateViewTest(TestCase):
@@ -36,6 +36,6 @@ class MovieCreateViewTest(TestCase):
         self.assertEqual(response.status_code, 302)  # Assuming a successful creation redirects to another page
 
         # Optionally, you can further test the created movie's details and attributes
-        created_movie = Film.objects.get(title='Test Movie')
+        created_movie = Movie.objects.get(title='Test Movie')
         self.assertEqual(created_movie.director, 'Test Director')
         # Add more assertions as needed

@@ -39,7 +39,7 @@ class MovieListViewTest(TestCase):
         self.assertEqual(sorted_movies[1]["title"], "Movie B")
         self.assertEqual(sorted_movies[2]["title"], "Movie C")
         
-    def test_sort_moviews_genre(self):
+    def test_sort_movies_genre(self):
         #Arrange
         test_object = MovieListViewTest()
      
