@@ -43,7 +43,7 @@
       "title": "Der Marsianer",
       "author": 1,
       "description": "Eine Überlebensgeschichte für das 21. Jahrhundert und der internationale Bestseller.",
-      "cover_image": "Der_Marsianer.jpg",
+      "cover_image": "der_marsianer.jpg",
       "genre": 4,
       "language": 1,
       "release_year": 2011,
@@ -60,7 +60,7 @@
       "title": "Harry Potter and the Philosopher's Stone",
       "author": 2,
       "description": "The story of a young boy, Harry Potter, who discovers that he is a wizard and is invited to attend Hogwarts School of Witchcraft and Wizardry.",
-      "cover_image": "Harry_Potter_and_the_Philosophers_Stone.jpg",
+      "cover_image": "harry_potter_and_the_philosophers_stone.jpg",
       "genre": 5,
       "language": 2,
       "release_year": 1997,
@@ -107,13 +107,13 @@
 ],
 "films": [
     {
-      "pk": 1,
-      "model": "lib_app.film",
+      "pk": 5,
+      "model": "lib_app.movie",
       "fields": {
         "title": "May December",
         "director": 4,
         "description": "Middle aged Gracie lives a happy, well settled life with her husband.",
-        "cover_image": "May_December.jpg",
+        "cover_image": "may_december.jpg",
         "genre": 7,
         "language": 1,
         "release_year": 2023,
@@ -121,12 +121,12 @@
         "IMDb": 7.1,
         "borrowed": false,
         "reserved": false,
-        "media_type": "film"
+        "media_type": "movie"
       }
     },
     {
-      "pk": 2,
-      "model": "lib_app.film",
+      "pk": 6,
+      "model": "lib_app.movie",
       "fields": {
         "title": "Inception",
         "director": 1,
@@ -139,12 +139,12 @@
         "IMDb": 8.8,
         "borrowed": false,
         "reserved": true,
-        "media_type": "film"
+        "media_type": "movie"
       }
     },
     {
-      "pk": 3,
-      "model": "lib_app.film",
+      "pk": 7,
+      "model": "lib_app.movie",
       "fields": {
         "title": "Pulp Fiction",
         "director": 2,
@@ -157,12 +157,12 @@
         "IMDb": 8.9,
         "borrowed": true,
         "reserved": false,
-        "media_type": "film"
+        "media_type": "movie"
       }
     },
     {
-      "pk": 4,
-      "model": "lib_app.film",
+      "pk": 8,
+      "model": "lib_app.movie",
       "fields": {
         "title": "The Shawshank Redemption",
         "director": 5,
@@ -175,7 +175,7 @@
         "IMDb": 9.3,
         "borrowed": false,
         "reserved": false,
-        "media_type": "film"
+        "media_type": "movie"
       }
     }
   ],
@@ -185,7 +185,7 @@
       "model": "lib_app.borrowed",
       "fields": {
         "user": 1,
-        "media": "Der Marsianer",
+        "media": 2,
         "return_date": "2024-03-01"
       }
     }
@@ -196,7 +196,7 @@
       "model": "lib_app.reserved",
       "fields": {
         "user": 1,
-        "media": "May December",
+        "media": 6,
         "reserved_till": "2024-03-01"
       }
     }
@@ -207,7 +207,7 @@
       "model": "lib_app.review",
       "fields": {
         "user": 2,
-        "media": "Der Marsianer",
+        "media": 1,
         "rating": 5,
         "review_text": "Absolutely great"
       }
