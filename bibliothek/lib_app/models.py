@@ -6,7 +6,7 @@ from django.contrib.auth.models import Permission
 
 
 
-MEDIA_CHOICES = [('book', 'Book'), ('film', 'Film')]
+MEDIA_CHOICES = [('book', 'Book'), ('movie', 'Movie')]
 
 
 class Media(models.Model):
@@ -45,7 +45,7 @@ class Book(Media):
         return self.title
 
 
-class Film(Media):
+class Movie(Media):
     director = models.ForeignKey('Director', on_delete=models.CASCADE)
     FSK = models.IntegerField()
     IMDb = models.DecimalField(max_digits=3, decimal_places=1)
