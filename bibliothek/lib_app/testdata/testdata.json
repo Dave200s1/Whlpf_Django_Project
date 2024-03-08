@@ -1,4 +1,6 @@
 [
+  {"pk": 1, "model": "auth.group", "fields": {"name": "Library members"}}, 
+
   {"pk": 1, "model": "lib_app.language", "fields": {"name": "Englisch"}},
   {"pk": 2, "model": "lib_app.language", "fields": {"name": "Spanisch"}},
   {"pk": 3, "model": "lib_app.language", "fields": {"name": "Französisch"}},
@@ -15,8 +17,57 @@
   {"pk": 6, "model": "lib_app.genre", "fields": {"name": "Biografie"}},
   {"pk": 7, "model": "lib_app.genre", "fields": {"name": "Komödie"}},
 
-  {"pk": 1, "model": "lib_app.user", "fields": {"username": "user1", "password": "password1"}},
-  {"pk": 2, "model": "lib_app.user", "fields": {"username": "user2", "password": "password2"}},
+  {"pk": 1, "model": "lib_app.user", "fields": {
+    "username": "admin",
+    "password": "pbkdf2_sha256$720000$75QkLSlPbI38Ch3UXW3kLz$LDgjF3sX+2IrbFKXaPJVVdS3zije15sDTEuotZ6gAHc=",
+    "first_name": "Lib", 
+    "last_name": "Admin",
+    "email": "admin@admin.ad",
+    "date_joined": "2024-03-08 09:02:54",
+    "is_superuser": 1,
+    "is_staff": 1, 
+    "locked": 0
+    }
+  },
+
+  {"pk": 2, "model": "lib_app.user", "fields": {
+    "username": "a.schreiner",
+    "password": "ddddKKKK",
+    "first_name": "Andrej", 
+    "last_name": "Schreiner",
+    "date_joined": "2024-03-08 09:02:54",
+    "is_superuser": 0,
+    "is_staff": 0, 
+    "locked": 0
+    }
+  },
+  {"pk": 3, "model": "lib_app.user", "fields": {
+    "username": "d.stefanov",
+    "password": "hhhhDDDD",
+    "first_name": "David", 
+    "last_name": "Stefanov",
+    "date_joined": "2024-03-08 09:02:54",
+    "is_superuser": 0,
+    "is_staff": 0,
+    "locked": 0
+    }
+  },
+
+  {"pk": 4, "model": "lib_app.user", "fields": {
+    "username": "d.wall",
+    "password": "ffffMMMM",
+    "first_name": "Daniel", 
+    "last_name": "Wall",
+    "date_joined": "2024-03-08 09:02:54",
+    "is_superuser": 0,
+    "is_staff": 0, 
+    "locked": 0
+    }
+  },
+
+  {"pk": 1, "model": "lib_app.user_groups", "fields": {"user_id": 2, "group_id": 1}},
+  {"pk": 2, "model": "lib_app.user_groups", "fields": {"user_id": 3, "group_id": 1}},
+  {"pk": 3, "model": "lib_app.user_groups", "fields": {"user_id": 4, "group_id": 1}},
 
   {"pk": 1, "model": "lib_app.author", "fields": {"name": "Andy Weir"}},
   {"pk": 2, "model": "lib_app.author", "fields": {"name": "J.K. Rowling"}},
@@ -61,6 +112,7 @@
 
   {"pk": 3, "model": "lib_app.media", "fields": {
       "title": "1984",
+      "media_type": "book",
       "description": "A dystopian novel by George Orwell.",
       "cover_image": "1984.jpg",
       "genre": 4,

@@ -68,12 +68,18 @@ class Language(models.Model):
 
 class User(AbstractUser):
     locked = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.last_name
 
 
 class UserBorrowed(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     media = models.ForeignKey(Media, on_delete=models.CASCADE)
     return_date = models.DateField()
+
+    def __str__(self):
+        return self.media.name
 
 
 class UserReserved(models.Model):
