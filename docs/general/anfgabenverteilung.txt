@@ -1,41 +1,21 @@
-Andrej: Backend-Entwicklung mit Django und Datenbankdesign (modells)
+Andrej: Backend
     Tests für das Datenmodell
     Implementierung des Datenmodells
-    Implementierung der Funktionen zum Hinzufügen, Ändern und Löschen von Medien, Medientypen, Genres, Sprachen, Autoren
-    Implementierung des Katalogs mit Suchfunktion
-
-David: Administrator-Funktionen
-    Implementierung von View-Tests für die gesamte Anwendung
-    Implementierung der Administratorfunktionen (Hinzufügen, Ändern, Löschen von Daten)
-    Sicherstellung der Datenintegrität und Fehlerbehandlung in der Anwendung
-    Integration der Admin-Oberfläche für die Verwaltung von Medien und Benutzerkonten
-
-Daniel: Frontend-Entwicklung und Benutzerprofile
-    Wireframes der Benutzeroberfläche
-	Implementierung für die Suche und Anzeige von Medien
-    Implementierung der Benutzerprofile mit Ausleih-Management
-    Integration von Formularen für die Erstellung und Bearbeitung von Benutzerprofilen und Ausleihen
-    Implementierung der Funktionen zur Reservierung und Vormerkung von Medien
-    Implementierung der Funktion zum Anzeigen von Benutzerkonten mit abgelaufenen Ausleihfristen
-
-Justin: Neuigkeiten und Filterung, Benutzer-Schnittstellen-Design
-    Implementierung der grafischen Oberfläche für Neuigkeiten und Filterung
-    Gestaltung und Umsetzung von Benutzeroberflächen für Nachrichten, Filter und Empfehlungen
-    Integration von Filteroptionen und Sortierfunktionen in die Benutzeroberfläche
-    Vorbereitung der URL-Lists
-
-Administrator kann:
-- Medien und Daten CRUD
-- Benutzer CRUD
-- Benutzer suchen und filtern
-- Medien suchen und filtern
+	Testdaten für das Datenbank
+    Implementierung des Administrator-Katalogs: Medien, Benutzer, Empfehlungen, Bewertungen
+- Medien CRUD, suchen und filtern
+- Benutzer CRUD, suchen und filtern, mit abgelaufenen Ausleihfristen
 - Empfehlungen und Bewertungen CRUD
 
-Benutzer kann:
-- Registrieren
-- An- und anmelden
-- Medien suchen und filtern
-- Medien ausleihen und reservieren
-- Bewertungen und Rezensionen CRUD
-- Empfehlungen erhalten
+David: Frontend
+    Implementierung von View-Tests
+	Benutzer: Medien anzeigen, ausleihen, reservieren, suchen und filtern
 
+Daniel: Frontend
+    Wireframes der Benutzeroberfläche
+	Templatesgrundgerüst, Benutzer registrieren, an- und abmelden, Passwort zurücksetzen
+
+Justin: Frontend
+    Vorbereitung der URL-Lists
+	Benutzer: Bewertungen und Rezensionen CRUD
+	Benutzer: Empfehlungen anzeigen
