@@ -13,7 +13,8 @@ David: Frontend
 
 Daniel: Frontend
     Wireframes der Benutzeroberfläche
-	Templatesgrundgerüst, Benutzer registrieren, an- und abmelden, Passwort zurücksetzen
+	Templatesgrundgerüst incl. User menu
+	Benutzer registrieren, an- und abmelden, Passwort zurücksetzen
 
 Justin: Frontend
     Vorbereitung der URL-Lists
