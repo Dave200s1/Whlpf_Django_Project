@@ -8,16 +8,15 @@ urlpatterns = [
 # catalog
     path('', views.IndexView.as_view(), name='index'),
 
-    path('/books', views.BookListView.as_view(), name='Books'),
-    path('/book/<int:book_id>/', views.BookDetailView.as_view(), name='Book'),
+    path('books/', views.BookListView.as_view(), name='books'),
+    path('book/<int:book_id>/', views.BookDetailView.as_view(), name='Book'),
 
-    path('/movies', views.MovieListView.as_view(), name='Movies'),
-    path('/movie/<int:movie_id>/', views.MovieDetailView.as_view(), name='Movie'),
+    path('movies', views.MovieListView.as_view(), name='Movies'),
+    path('movie/<int:movie_id>/', views.MovieDetailView.as_view(), name='Movie'),
 
-    path('/authors', views.AuthorListView.as_view(), name='Authors'),
-    path('/author/<int:author_id>/', views.AuthorDetailView.as_view(), name='Author'),
+    path('authors', views.AuthorListView.as_view(), name='Authors'),
+    path('author/<int:author_id>/', views.AuthorDetailView.as_view(), name='Author'),
 
-# user
     path('/register/',views.register,name='Registrieren'),
     path('/login/',views.login,name='Anmelden'),
     path('/logout/',views.logout,name='Abmelden'),

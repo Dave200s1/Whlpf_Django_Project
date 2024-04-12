@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 from .models import Author, Book, Movie
 from django.views.generic import ListView, DetailView
 
@@ -37,3 +38,4 @@ class AuthorDetailView(DetailView):
     model = Author
     template_name = 'lib_app/author.html'
     context_object_name = 'author'
+    
