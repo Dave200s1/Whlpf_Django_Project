@@ -1,0 +1,25 @@
+{% extends "lib_app/base.html" %}
+
+{% block title %}Book list{% endblock %}
+
+{% block content %}
+
+<h1>Book list</h1>
+
+    {% if books %}
+    <ul>
+
+      {% for book in books %}
+      <li>
+        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books.</p>
+    {% endif %}
+
+{% endblock %}
+
+
