@@ -1,5 +1,7 @@
 # Library management
 
+Copy the .txt file into the folder where you have cloned your repository, in order to be visible.
+
 Install package list: pip install -r requirements.txt
 
 Create new migration files: python manage.py makemigrations
