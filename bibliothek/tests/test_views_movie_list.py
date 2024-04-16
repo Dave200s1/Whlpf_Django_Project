@@ -1,5 +1,6 @@
 from  django.test import TestCase
-from MovieListView import MovieListViewClass
+
+from library.view_movie_list import MovieListView
 
 
 class MovieListViewTest(TestCase):

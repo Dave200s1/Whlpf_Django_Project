@@ -16,7 +16,7 @@ urlpatterns = [
 
     path('authors', views.AuthorListView.as_view(), name='Authors'),
     path('author/<int:author_id>/', views.AuthorDetailView.as_view(), name='Author'),
-
+    #Causes some issues !!!
     #path('/register/',views.register,name='Registrieren'),
     #path('/login/',views.login,name='Anmelden'),
     #path('/logout/',views.logout,name='Abmelden'),
