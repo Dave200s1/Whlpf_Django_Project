@@ -2,8 +2,6 @@ import sqlite3
 
 class MovieListView:
 
-    def __init__(self, db_file):
-        self.db_file = db_file
 
     def get_connection(self):
         return sqlite3.connect(self.db_file)
@@ -56,5 +54,5 @@ class MovieListView:
 
 # Test code
 if __name__ == "__main__":
-    movie_list_view = MovieListView('Artikel.db')
+    movie_list_view = MovieListView()
     print(movie_list_view.extract_day_from_database())
