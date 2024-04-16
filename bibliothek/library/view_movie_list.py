@@ -25,13 +25,16 @@ class MovieListView:
         return sorted_movies
 
     def extract_day_from_database(self):
-        conn = self.get_connection()
-        cursor = conn.cursor()
-        cursor.execute("SELECT ErscheinungsDatum FROM Artikel")
-        date_string = cursor.fetchone()[0]
-        day_substring = date_string[:2]
-        conn.close()
-        return day_substring
+        try:
+            conn = self.get_connection()
+            cursor = conn.cursor()
+            cursor.execute("SELECT ErscheinungsDatum FROM Artikel")
+            date_string = cursor.fetchone()[0]
+            day_substring = date_string[:2]
+            conn.close()
+            return day_substring
+        except sqlite3.Error as e:
+            print("Error accessing database:", e)
 
     def extract_month_from_database(self):
         conn = self.get_connection()
@@ -54,4 +57,4 @@ class MovieListView:
 # Test code
 if __name__ == "__main__":
     movie_list_view = MovieListView('Artikel.db')
-    print(movie_list_view.extract_month_from_database())
+    print(movie_list_view.extract_day_from_database())
