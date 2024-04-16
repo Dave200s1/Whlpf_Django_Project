@@ -1,13 +1,16 @@
+import sqlite3
+
+
 
 class MovieListView:
     def get_movies(self):
-        movies = [
-            {"title": "Movie A", "genre": "Action"},
-            {"title": "Movie B", "genre": "Comedy"},
-            {"title": "Movie C", "genre": "Drama"},
-            {"title": "Movie D", "genre": "Action"}
-        ]
+        conn = sqlite3.connect('Artikel.db')  
+        cursor = conn.cursor()
+        cursor.execute("SELECT Name, Genre FROM Artikel")
+        movies = [{"title": row[0], "genre": row[1]} for row in cursor.fetchall()]
+        conn.close()
         return movies
+        
 
     def sort_alphabetically(self, movies):
         sorted_movies = sorted(movies, key=lambda x: x["title"])
