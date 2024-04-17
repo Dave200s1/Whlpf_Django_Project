@@ -4,7 +4,12 @@ class MovieListView:
 
 
     def get_connection(self):
-        return sqlite3.connect(self.db_file)
+        try:
+            conn = sqlite3.connect('Artikel.db')
+            return conn
+        except sqlite3.Error as e:
+            print("Error connecting to the database:", e)
+            return None
 
     def get_movies(self):
         conn = self.get_connection()
@@ -55,4 +60,4 @@ class MovieListView:
 # Test code
 if __name__ == "__main__":
     movie_list_view = MovieListView()
-    print(movie_list_view.extract_day_from_database())
+    print(movie_list_view.extract_year_from_database())

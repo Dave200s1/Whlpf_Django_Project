@@ -1,2 +1,1 @@
-
-    def get_connection(self):
+Artikel
