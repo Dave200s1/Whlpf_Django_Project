@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausleihen - Bibliotheksverwaltung</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 4rem; /* Platz oberhalb der Navbar */
+            left: 0;
+            height: calc(100% - 4rem); /* Höhe des Viewports abzüglich der Navbar-Höhe */
+            width: 250px;
+            background-color: #343a40;
+            padding-left: 1rem;
+        }
+        .sidebar-item {
+            margin-bottom: 1rem;
+        }
+        .sidebar-item a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+        .sidebar-item a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+        .navbar-brand {
+            margin-left: 1rem; /* Abstand vom linken Rand */
+        }
+        .navbar-brand,
+        .navbar-nav {
+            margin-left: auto; /* Verschiebung des Inhalts ganz nach rechts */
+        }
+        .navbar-brand {
+            margin-left: auto;
+            margin-right: auto; /* Zentrierung des Schriftzugs */
+        }
+        .left-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%; /* Volle Bildschirmhöhe */
+            width: 250px;
+            background-color: #343a40;
+            padding-left: 1rem;
+        }
+        .highlighted {
+            background-color: #fff !important;
+            color: #000 !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Schriftzug Bibliotheksverwaltung und Navigationsleiste -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="#">Bibliotheksverwaltung</a>
+    </div>
+</nav>
+
+<!-- Linker Sidebar -->
+<div class="left-sidebar">
+    <h2 class="text-light text-center mb-4">Navigation</h2>
+    <ul class="list-unstyled">
+        <li class="sidebar-item"><a id="homeBtn" href="#">Startseite</a></li>
+        <li class="sidebar-item"><a id="loginBtn" href="#">Anmelden</a></li>
+        <li class="sidebar-item"><a id="filterBtn" href="#">Filter</a></li>
+        <li class="sidebar-item"><a id="ausleihenBtn" href="#">Ausleihen</a></li>
+        <li class="sidebar-item"><a href="#">Gespeicherte Artikel</a></li>
+        <li class="sidebar-item"><a href="#">Meine Artikel</a></li>
+    </ul>
+</div>
+
+<!-- Content Bereich -->
+<div class="content">
+    <div class="container mt-5">
+        <h1 id="welcomeText">Willkommen bei der Bibliotheksverwaltung</h1>
+        <div id="loginForm" style="display: none;">
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nutzername</label>
+                    <input type="text" class="form-control" id="username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Passwort</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Anmelden</button>
+            </form>
+        </div>
+        <div id="filterForm" style="display: none;">
+            <form onsubmit="filterDatabase(); return false;">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="title" class="form-label">Titel</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="day" class="form-label">Tag</label>
+                        <input type="text" class="form-control" id="day">
+                    </div>
+                    <div class="col">
+                        <label for="month" class="form-label">Monat</label>
+                        <input type="text" class="form-control" id="month">
+                    </div>
+                    <div class="col">
+                        <label for="year" class="form-label">Jahr</label>
+                        <input type="text" class="form-control" id="year">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="genre" class="form-label">Genre</label>
+                        <input type="text" class="form-control" id="genre">
+                    </div>
+                    <div class="col">
+                        <label for="author" class="form-label">Author</label>
+                        <input type="text" class="form-control" id="author">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="language" class="form-label">Sprache</label>
+                        <input type="text" class="form-control" id="language">
+                    </div>
+                    <div class="col">
+                        <label for="isbn" class="form-label">ISBN Nummer</label>
+                        <input type="text" class="form-control" id="isbn">
+                    </div>
+                    <div class="col">
+                        <label for="type" class="form-label">Typ</label>
+                        <input type="text" class="form-control" id="type">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Filtern</button>
+                <button type="button" class="btn btn-danger" onclick="clearFilters()">Filter entfernen</button>
+            </form>
+        </div>
+        <div id="ausleihenContent" style="display: none;">
+            <h2>Gefilterte Bücher</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Titel</th>
+                        <th scope="col">Datum</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Sprache</th>
+                        <th scope="col">ISBN</th>
+                        <th scope="col">Typ</th>
+                        <th scope="col">Verfügbarkeit</th>
+                        <th scope="col">Aktion</th>
+                    </tr>
+                </thead>
+                <tbody id="bookList">
+                    <!-- Hier werden die Daten aus der SQLite-Datenbank eingefügt -->
+                </tbody>
+            </table>
+            <div class="mt-3">
+                <button type="button" class="btn btn-primary" onclick="reservieren()">Reservieren</button>
+                <button type="button" class="btn btn-secondary" onclick="vormerken()">Vormerken</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JavaScript (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function reservieren() {
+        // Hier kannst du die Logik für das Reservieren implementieren
+        alert("Reservieren-Funktion wurde noch nicht implementiert.");
+    }
+
+    function vormerken() {
+        // Hier kannst du die Logik für das Vormerken implementieren
+        alert("Vormerken-Funktion wurde noch nicht implementiert.");
+    }
+
+    function filterDatabase() {
+        var title = document.getElementById('title').value;
+        var day = document.getElementById('day').value;
+        var month = document.getElementById('month').value;
+        var year = document.getElementById('year').value;
+        var genre = document.getElementById('genre').value;
+        var author = document.getElementById('author').value;
+        var language = document.getElementById('language').value;
+        var isbn = document.getElementById('isbn').value;
+        var type = document.getElementById('type').value;
+
+        // Überprüfen, ob mindestens ein Kriterium ausgefüllt ist
+        if (title || day || month || year || genre || author || language || isbn || type) {
+            // Hier kannst du die Logik zum Filtern der Datenbank implementieren
+            // Hier wird angenommen, dass eine Funktion namens "fetchFilteredData" existiert,
+            // die die Datenbank mit den angegebenen Filtern aufruft und die Ergebnisse anzeigt
+            alert("Datenbank wird mit den angegebenen Filtern gefiltert: \n" +
+                "Titel: " + title + "\n" +
+                "Datum: " + day + "." + month + "." + year + "\n" +
+                "Genre: " + genre + "\n" +
+                "Autor: " + author + "\n" +
+                "Sprache: " + language + "\n" +
+                "ISBN: " + isbn + "\n" +
+                "Typ: " + type);
+            // Hier fügen wir einen Dummy-Eintrag in die Tabelle ein, um das Beispiel zu zeigen
+            var bookList = document.getElementById('bookList');
+            bookList.innerHTML = '<tr><td>Beispielbuch</td><td>01.01.2022</td><td>Roman</td><td>Max Mustermann</td><td>Deutsch</td><td>1234567890</td><td>Buch</td><td>Verfügbar</td><td><button type="button" class="btn btn-primary" onclick="reservieren()">Reservieren</button> <button type="button" class="btn btn-secondary" onclick="vormerken()">Vormerken</button></td></tr>';
+            document.getElementById('filterForm').style.display = 'none'; // Filterform ausblenden
+        } else {
+            alert("Es wurde kein Kriterium zum Filtern angegeben.");
+        }
+    }
+
+    function clearFilters() {
+        document.getElementById('title').value = '';
+        document.getElementById('day').value = '';
+        document.getElementById('month').value = '';
+        document.getElementById('year').value = '';
+        document.getElementById('genre').value = '';
+        document.getElementById('author').value = '';
+        document.getElementById('language').value = '';
+        document.getElementById('isbn').value = '';
+        document.getElementById('type').value = '';
+        document.getElementById('bookList').innerHTML = ''; // Tabelle leeren
+        document.getElementById('filterForm').style.display = 'block'; // Filterform anzeigen
+    }
+
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        document.getElementById('welcomeText').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('filterForm').style.display = 'none';
+        document.getElementById('ausleihenContent').style.display = 'none';
+        this.classList.add('highlighted');
+        document.getElementById('homeBtn').classList.remove('highlighted');
+        document.getElementById('filterBtn').classList.remove('highlighted');
+        document.getElementById('ausleihenBtn').classList.remove('highlighted');
+    });
+
+    document.getElementById('homeBtn').addEventListener('click', function() {
+        document.getElementById('welcomeText').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('filterForm').style.display = 'none';
+        document.getElementById('ausleihenContent').style.display = 'none';
+        this.classList.add('highlighted');
+        document.getElementById('loginBtn').classList.remove('highlighted');
+        document.getElementById('filterBtn').classList.remove('highlighted');
+        document.getElementById('ausleihenBtn').classList.remove('highlighted');
+    });
+
+    document.getElementById('filterBtn').addEventListener('click', function() {
+        document.getElementById('welcomeText').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('filterForm').style.display = 'block';
+        document.getElementById('ausleihenContent').style.display = 'none';
+        this.classList.add('highlighted');
+        document.getElementById('homeBtn').classList.remove('highlighted');
+        document.getElementById('loginBtn').classList.remove('highlighted');
+        document.getElementById('ausleihenBtn').classList.remove('highlighted');
+    });
+
+    document.getElementById('ausleihenBtn').addEventListener('click', function() {
+        document.getElementById('welcomeText').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('filterForm').style.display = 'none';
+        document.getElementById('ausleihenContent').style.display = 'block';
+        this.classList.add('highlighted');
+        document.getElementById('homeBtn').classList.remove('highlighted');
+        document.getElementById('loginBtn').classList.remove('highlighted');
+        document.getElementById('filterBtn').classList.remove('highlighted');
+        filterDatabase(); // Aufruf der Filterfunktion beim Klicken auf "Ausleihen"
+    });
+</script>
+</body>
+</html>
