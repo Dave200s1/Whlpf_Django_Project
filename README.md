@@ -47,13 +47,14 @@ Test für Models ausführen: python manage.py test tests.test_models
 ## Daniel
 - Wireframe erstellen  ( [Wireframes User Stories.pdf](https://github.com/Dave200s1/Whlpf_Django_Project/blob/main/docs/general/Wireframe%20User%20Storys.pdf) )
 - Frontend HTML Template erstellen
-- Anlegen eines Superusers zum Anmelden
+- Anlegen eines Superusers zum Anmelden (python manage.py createsuperuser)
   
 - Nutzername: admin
 - Passwort: 123
 - Anlegen einer middleware.py (Automatisches abmelden beim Aufruf der Seite)
-- Superuser anmelden (Kein weiteres anmelden mehr möglich, Abmelde Button sowie Fehlermeldung beim Falsche eingeben eines Passwortes)
-- User menu hinzufügen
+- Superuser anmelden (Kein weiteres anmelden mehr möglich)
+- Abmelde Button sowie Fehlermeldung beim Falsche eingeben eines Passwortes)
+- User menü (Anmelden, Filtern, Ausleihe, Meine Artikel Frontend)
 - Mitarbeit der Django Projekt Dokumentation
 ## Justin
 - URL-Lists vorbereiten
