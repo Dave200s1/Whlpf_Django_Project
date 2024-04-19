@@ -16,15 +16,16 @@ urlpatterns = [
 
     path('authors', views.AuthorListView.as_view(), name='Authors'),
     path('author/<int:author_id>/', views.AuthorDetailView.as_view(), name='Author'),
-
-    path('/register/',views.register,name='Registrieren'),
-    path('/login/',views.login,name='Anmelden'),
-    path('/logout/',views.logout,name='Abmelden'),
-
-    path('/users/<user_id>',views.user_id,name='Benutzerprofil'),
-    path('/users/<user_id>/borrowed/',views.borrowed_media,name='Benutzer ausgeliehene Medien'),
-    path('/users/<user_id>/reserved/',views.reserved_media,name='Benutzer reservierte Medien'),
-    path('/users/<user_id>/recommendations/',views.recommendations,name='Empfehlungen'),
-    path('/users/<user_id>/ratings/',views.rated_media,name='Benutzer-Bewertungen'),
-    path('/users/<user_id>/ratings/<rating_id>/',views.ratings,name='Benutzer Bewertung Details'),
+    #Causes some issues !!!
+    #path('/register/',views.register,name='Registrieren'),
+    #path('/login/',views.login,name='Anmelden'),
+    #path('/logout/',views.logout,name='Abmelden'),
+    
+    #path('/users/<user_id>',views.user_id,name='Benutzerprofil'),
+    #path('/users/<user_id>/borrowed/',views.borrowed_media,name='Benutzer ausgeliehene Medien'),
+    #path('/users/<user_id>/reserved/',views.reserved_media,name='Benutzer reservierte Medien'),
+    #path('/users/<user_id>/recommendations/',views.recommendations,name='Empfehlungen'),
+    #path('/users/<user_id>/ratings/',views.rated_media,name='Benutzer-Bewertungen'),
+    #path('/users/<user_id>/ratings/<rating_id>/',views.ratings,name='Benutzer Bewertung Details'),
+    
 ]

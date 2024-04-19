@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmelden - Bibliotheksverwaltung</title>
+    <title>Ausleihen - Bibliotheksverwaltung</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -78,8 +78,8 @@
         <li class="sidebar-item"><a id="loginBtn" href="#">Anmelden</a></li>
         <li class="sidebar-item"><a id="filterBtn" href="#">Filter</a></li>
         <li class="sidebar-item"><a id="ausleihenBtn" href="#">Ausleihen</a></li>
-        <li class="sidebar-item"><a id="gespeicherteArtikelBtn" href="#">Gespeicherte Artikel</a></li>
-        <li class="sidebar-item"><a id="artikelBtn" href="#">Artikel</a></li>
+        <li class="sidebar-item"><a href="#">Gespeicherte Artikel</a></li>
+        <li class="sidebar-item"><a href="#">Meine Artikel</a></li>
     </ul>
 </div>
 
@@ -99,9 +99,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Anmelden</button>
             </form>
-        </div> <!--Filter-->
+        </div>
         <div id="filterForm" style="display: none;">
-            <form>
+            <form onsubmit="filterDatabase(); return false;">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="title" class="form-label">Titel</label>
@@ -147,91 +147,33 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Filtern</button>
+                <button type="button" class="btn btn-danger" onclick="clearFilters()">Filter entfernen</button>
             </form>
         </div>
-        <style>
-            .grid-container {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
-                gap: 10px; /* Spacing between grid items */
-            }
-    
-            .grid-item {
-                border: 1px solid #ccc;
-                padding: 10px;
-            }
-        </style>
-        <div id="filterForm">
-            <form>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="title" class="form-label">Titel</label>
-                        <input type="text" class="form-control" id="title">
-                    </div>
-                    <!-- Add more input fields for other form elements -->
-                </div>
-                <!-- Add more rows for additional form elements -->
-                <button type="submit" class="btn btn-primary">Filtern</button>
-            </form>
-        </div>
-        
-        <div class="grid-container" id="movieGrid">
-            <!-- Movie data will be dynamically populated here -->
-        </div>
-        <!--Ende-->
-        <div id="ausleihenForm" style="display: none;">
+        <div id="ausleihenContent" style="display: none;">
+            <h2>Gefilterte Bücher</h2>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Titel</th>
+                        <th scope="col">Datum</th>
+                        <th scope="col">Genre</th>
                         <th scope="col">Autor</th>
+                        <th scope="col">Sprache</th>
+                        <th scope="col">ISBN</th>
+                        <th scope="col">Typ</th>
                         <th scope="col">Verfügbarkeit</th>
                         <th scope="col">Aktion</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="bookList">
                     <!-- Hier werden die Daten aus der SQLite-Datenbank eingefügt -->
                 </tbody>
             </table>
-            <button class="btn btn-primary">Reservieren</button>
-            <button class="btn btn-primary">Vormerken</button>
-        </div>
-        <div id="gespeicherteArtikelForm" style="display: none;">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Titel</th>
-                        <th scope="col">Autor</th>
-                        <th scope="col">Verfügbarkeit</th>
-                        <th scope="col">Aktion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Hier werden die gespeicherten Artikel des Nutzers aus der SQLite-Datenbank eingefügt -->
-                </tbody>
-            </table>
-            <button class="btn btn-primary">Reservieren</button>
-            <button class="btn btn-primary">Vormerken</button>
-        </div>
-        <div id="artikelForm" style="display: none;">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Titel</th>
-                        <th scope="col">Autor</th>
-                        <th scope="col">Verfügbarkeit</th>
-                        <th scope="col">Aktion</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <!-- Hier werden die Artikel aus der SQLite-Datenbank eingefügt -->
-                </tbody>
-            </table>
-            <button class="btn btn-primary">Ausleihen</button>
+            <div class="mt-3">
+                <button type="button" class="btn btn-primary" onclick="reservieren()">Reservieren</button>
+                <button type="button" class="btn btn-secondary" onclick="vormerken()">Vormerken</button>
+            </div>
         </div>
     </div>
 </div>
@@ -239,94 +181,106 @@
 <!-- Bootstrap JavaScript (optional) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    function reservieren() {
+        // Hier kannst du die Logik für das Reservieren implementieren
+        alert("Reservieren-Funktion wurde noch nicht implementiert.");
+    }
+
+    function vormerken() {
+        // Hier kannst du die Logik für das Vormerken implementieren
+        alert("Vormerken-Funktion wurde noch nicht implementiert.");
+    }
+
+    function filterDatabase() {
+        var title = document.getElementById('title').value;
+        var day = document.getElementById('day').value;
+        var month = document.getElementById('month').value;
+        var year = document.getElementById('year').value;
+        var genre = document.getElementById('genre').value;
+        var author = document.getElementById('author').value;
+        var language = document.getElementById('language').value;
+        var isbn = document.getElementById('isbn').value;
+        var type = document.getElementById('type').value;
+
+        // Überprüfen, ob mindestens ein Kriterium ausgefüllt ist
+        if (title || day || month || year || genre || author || language || isbn || type) {
+            // Hier kannst du die Logik zum Filtern der Datenbank implementieren
+            // Hier wird angenommen, dass eine Funktion namens "fetchFilteredData" existiert,
+            // die die Datenbank mit den angegebenen Filtern aufruft und die Ergebnisse anzeigt
+            alert("Datenbank wird mit den angegebenen Filtern gefiltert: \n" +
+                "Titel: " + title + "\n" +
+                "Datum: " + day + "." + month + "." + year + "\n" +
+                "Genre: " + genre + "\n" +
+                "Autor: " + author + "\n" +
+                "Sprache: " + language + "\n" +
+                "ISBN: " + isbn + "\n" +
+                "Typ: " + type);
+            // Hier fügen wir einen Dummy-Eintrag in die Tabelle ein, um das Beispiel zu zeigen
+            var bookList = document.getElementById('bookList');
+            bookList.innerHTML = '<tr><td>Beispielbuch</td><td>01.01.2022</td><td>Roman</td><td>Max Mustermann</td><td>Deutsch</td><td>1234567890</td><td>Buch</td><td>Verfügbar</td><td><button type="button" class="btn btn-primary" onclick="reservieren()">Reservieren</button> <button type="button" class="btn btn-secondary" onclick="vormerken()">Vormerken</button></td></tr>';
+            document.getElementById('filterForm').style.display = 'none'; // Filterform ausblenden
+        } else {
+            alert("Es wurde kein Kriterium zum Filtern angegeben.");
+        }
+    }
+
+    function clearFilters() {
+        document.getElementById('title').value = '';
+        document.getElementById('day').value = '';
+        document.getElementById('month').value = '';
+        document.getElementById('year').value = '';
+        document.getElementById('genre').value = '';
+        document.getElementById('author').value = '';
+        document.getElementById('language').value = '';
+        document.getElementById('isbn').value = '';
+        document.getElementById('type').value = '';
+        document.getElementById('bookList').innerHTML = ''; // Tabelle leeren
+        document.getElementById('filterForm').style.display = 'block'; // Filterform anzeigen
+    }
+
     document.getElementById('loginBtn').addEventListener('click', function() {
         document.getElementById('welcomeText').style.display = 'none';
         document.getElementById('loginForm').style.display = 'block';
         document.getElementById('filterForm').style.display = 'none';
-        document.getElementById('ausleihenForm').style.display = 'none';
-        document.getElementById('gespeicherteArtikelForm').style.display = 'none';
-        document.getElementById('artikelForm').style.display = 'none';
+        document.getElementById('ausleihenContent').style.display = 'none';
         this.classList.add('highlighted');
         document.getElementById('homeBtn').classList.remove('highlighted');
         document.getElementById('filterBtn').classList.remove('highlighted');
         document.getElementById('ausleihenBtn').classList.remove('highlighted');
-        document.getElementById('gespeicherteArtikelBtn').classList.remove('highlighted');
-        document.getElementById('artikelBtn').classList.remove('highlighted');
     });
 
     document.getElementById('homeBtn').addEventListener('click', function() {
         document.getElementById('welcomeText').style.display = 'block';
         document.getElementById('loginForm').style.display = 'none';
         document.getElementById('filterForm').style.display = 'none';
-        document.getElementById('ausleihenForm').style.display = 'none';
-        document.getElementById('gespeicherteArtikelForm').style.display = 'none';
-        document.getElementById('artikelForm').style.display = 'none';
+        document.getElementById('ausleihenContent').style.display = 'none';
         this.classList.add('highlighted');
         document.getElementById('loginBtn').classList.remove('highlighted');
         document.getElementById('filterBtn').classList.remove('highlighted');
         document.getElementById('ausleihenBtn').classList.remove('highlighted');
-        document.getElementById('gespeicherteArtikelBtn').classList.remove('highlighted');
-        document.getElementById('artikelBtn').classList.remove('highlighted');
     });
 
     document.getElementById('filterBtn').addEventListener('click', function() {
         document.getElementById('welcomeText').style.display = 'none';
         document.getElementById('loginForm').style.display = 'none';
         document.getElementById('filterForm').style.display = 'block';
-        document.getElementById('ausleihenForm').style.display = 'none';
-        document.getElementById('gespeicherteArtikelForm').style.display = 'none';
-        document.getElementById('artikelForm').style.display = 'none';
+        document.getElementById('ausleihenContent').style.display = 'none';
         this.classList.add('highlighted');
         document.getElementById('homeBtn').classList.remove('highlighted');
         document.getElementById('loginBtn').classList.remove('highlighted');
         document.getElementById('ausleihenBtn').classList.remove('highlighted');
-        document.getElementById('gespeicherteArtikelBtn').classList.remove('highlighted');
-        document.getElementById('artikelBtn').classList.remove('highlighted');
     });
 
     document.getElementById('ausleihenBtn').addEventListener('click', function() {
         document.getElementById('welcomeText').style.display = 'none';
         document.getElementById('loginForm').style.display = 'none';
         document.getElementById('filterForm').style.display = 'none';
-        document.getElementById('ausleihenForm').style.display = 'block';
-        document.getElementById('gespeicherteArtikelForm').style.display = 'none';
-        document.getElementById('artikelForm').style.display = 'none';
+        document.getElementById('ausleihenContent').style.display = 'block';
         this.classList.add('highlighted');
         document.getElementById('homeBtn').classList.remove('highlighted');
         document.getElementById('loginBtn').classList.remove('highlighted');
         document.getElementById('filterBtn').classList.remove('highlighted');
-        document.getElementById('gespeicherteArtikelBtn').classList.remove('highlighted');
-        document.getElementById('artikelBtn').classList.remove('highlighted');
-    });
-
-    document.getElementById('gespeicherteArtikelBtn').addEventListener('click', function() {
-        document.getElementById('welcomeText').style.display = 'none';
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('filterForm').style.display = 'none';
-        document.getElementById('ausleihenForm').style.display = 'none';
-        document.getElementById('gespeicherteArtikelForm').style.display = 'block';
-        document.getElementById('artikelForm').style.display = 'none';
-        this.classList.add('highlighted');
-        document.getElementById('homeBtn').classList.remove('highlighted');
-        document.getElementById('loginBtn').classList.remove('highlighted');
-        document.getElementById('filterBtn').classList.remove('highlighted');
-        document.getElementById('ausleihenBtn').classList.remove('highlighted');
-        document.getElementById('artikelBtn').classList.remove('highlighted');
-    });
-
-    document.getElementById('artikelBtn').addEventListener('click', function() {
-        document.getElementById('welcomeText').style.display = 'none';
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('filterForm').style.display = 'none';
-        document.getElementById('ausleihenForm').style.display = 'none';
-        document.getElementById('gespeicherteArtikelForm').style.display = 'none';
-        document.getElementById('artikelForm').style.display = 'block';
-        this.classList.add('highlighted');
-        document.getElementById('homeBtn').classList.remove('highlighted');
-        document.getElementById('loginBtn').classList.remove('highlighted');
-        document.getElementById('filterBtn').classList.remove('highlighted');
-        document.getElementById('ausleihenBtn').classList.remove('highlighted');
-        document.getElementById('gespeicherteArtikelBtn').classList.remove('highlighted');
+        filterDatabase(); // Aufruf der Filterfunktion beim Klicken auf "Ausleihen"
     });
 </script>
 </body>
