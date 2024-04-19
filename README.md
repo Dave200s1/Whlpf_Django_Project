@@ -47,7 +47,7 @@ Test für Models ausführen: python manage.py test tests.test_models
 ## Daniel
 - Wireframe erstellen  ( [Wireframes User Stories.pdf](https://github.com/Dave200s1/Whlpf_Django_Project/blob/main/docs/general/Wireframe%20User%20Storys.pdf) )
 - Frontend HTML Template erstellen
-- - Anlegen eines Superusers zum Anmelden
+- Anlegen eines Superusers zum Anmelden
   
 - Nutzername: admin
 - Passwort: 123
