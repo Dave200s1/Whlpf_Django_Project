@@ -45,7 +45,7 @@ Test für Models ausführen: python manage.py test tests.test_models
 - Projektdokumentation (Readme)
 
 ## Daniel
-- Wireframe erstellen
+- Wireframe erstellen  ( [Wireframes User Stories.pdf](https://github.com/Dave200s1/Whlpf_Django_Project/blob/main/docs/general/Wireframe%20User%20Storys.pdf) )
 - Benutzer registrieren, an-, abmelden und Passwort zurücksetzen
 - User menu hinzufügen
 - Templates erstellen
