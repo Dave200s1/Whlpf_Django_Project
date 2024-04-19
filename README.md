@@ -27,20 +27,20 @@ Adresse der App: http://127.0.0.1:8000/lib_app/
 Test für Models ausführen: python manage.py test tests.test_models
 
 
-##David
+## David
 - ER und DB models entwerfen
 - Views schreiben
 - Testfälle für Views schreiben
 - Benutzer: Medien anzeigen, ausleihen, reservieren, suchen und filtern
 - Projektdokumentation (Readme)
 
-##Daniel
+## Daniel
 - Wireframe erstellen
 - Benutzer registrieren, an-, abmelden und Passwort zurücksetzen
 - User menu hinzufügen
 - Templates erweitern
 
-##Andrej
+## Andrej
 - Django einrichten
 - ER und DB models entwerfen
 - Models erstellen
@@ -50,7 +50,7 @@ Test für Models ausführen: python manage.py test tests.test_models
 - Bootstrap einbauen und erstes Basetemplate anlegen
 - Projektdokumentation (Readme)
 
-##Justin
+## Justin
 - URL-Lists vorbereiten
 - Benutzer: Empfehlungen anzeigen
 - Benutzer: Bewertungen und Rezensionen
