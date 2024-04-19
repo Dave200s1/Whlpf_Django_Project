@@ -1,4 +1,5 @@
 # Library management
+![npm bundle size (version)](https://img.shields.io/badge/version-0.0.1-green) ![npm bundle size (version)](https://img.shields.io/badge/language-python3-blue)
 
 Copy the .txt file into the folder where you have cloned your repository, in order to be visible.
 
