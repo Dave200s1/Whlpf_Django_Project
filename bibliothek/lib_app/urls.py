@@ -1,10 +1,13 @@
 from django.urls import path
 from . import views
+from django.shortcuts import render, redirect
+
 
 app_name = "lib_app"
 
 urlpatterns = [
-
+    path('', views.index, name='index'),  # Hier bleibt nur eine Definition für die Indexseite
+    path('logout/', views.user_logout, name='user_logout'),
 # catalog
     path('', views.IndexView.as_view(), name='index'),
 
