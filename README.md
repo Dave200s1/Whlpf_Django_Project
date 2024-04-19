@@ -29,7 +29,7 @@ Test für Models ausführen: python manage.py test tests.test_models
 
 ## Andrej
 - Django einrichten
-- ER model entwerfen
+- ER model entwerfen ( [ER.pdf](https://github.com/Dave200s1/Whlpf_Django_Project/blob/main/docs/db/ER.pdf) )
 - Models erstellen
 - Testdaten für die Datenbank erstellen (JSON)
 - Testfälle für Models schreiben
@@ -38,7 +38,7 @@ Test für Models ausführen: python manage.py test tests.test_models
 - Projektdokumentation (Readme)
 
 ## David
-- ERM model entwerfen
+- ERM model entwerfen  ( [ERM.png](https://github.com/Dave200s1/Whlpf_Django_Project/blob/main/docs/db/ERM.png) )
 - Views schreiben
 - Testfälle für Views schreiben
 - Benutzer: Medien anzeigen, ausleihen, reservieren, suchen und filtern (app part)
