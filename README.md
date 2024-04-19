@@ -26,12 +26,21 @@ Adresse der App: http://127.0.0.1:8000/lib_app/
 
 Test für Models ausführen: python manage.py test tests.test_models
 
+## Andrej
+- Django einrichten
+- ER model entwerfen
+- Models erstellen
+- Testdaten für die Datenbank erstellen (JSON)
+- Testfälle für Models schreiben
+- Administrator-Katalogs: Medien, Benutzer usw. suchen und filtern (admin part)
+- Bootstrap einbauen und erstes Basetemplate anlegen
+- Projektdokumentation (Readme)
 
 ## David
-- ER und DB models entwerfen
+- ERM model entwerfen
 - Views schreiben
 - Testfälle für Views schreiben
-- Benutzer: Medien anzeigen, ausleihen, reservieren, suchen und filtern
+- Benutzer: Medien anzeigen, ausleihen, reservieren, suchen und filtern (app part)
 - Projektdokumentation (Readme)
 
 ## Daniel
@@ -40,19 +49,8 @@ Test für Models ausführen: python manage.py test tests.test_models
 - User menu hinzufügen
 - Templates erweitern
 
-## Andrej
-- Django einrichten
-- ER und DB models entwerfen
-- Models erstellen
-- Testdaten für die Datenbank erstellen (JSON)
-- Testfälle für Models schreiben
-- Administrator-Katalogs: Medien, Benutzer, Empfehlungen, Bewertungen
-- Bootstrap einbauen und erstes Basetemplate anlegen
-- Projektdokumentation (Readme)
-
 ## Justin
 - URL-Lists vorbereiten
 - Benutzer: Empfehlungen anzeigen
 - Benutzer: Bewertungen und Rezensionen
 - Zusätzliche Django Projekt Dokumentation ( [Django Projekt Dokumentation.pdf](https://github.com/Dave200s1/Whlpf_Django_Project/blob/main/docs/general/Django%20Projekt%20Dokumentation.pdf) )
-
