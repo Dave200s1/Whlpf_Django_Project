@@ -14,6 +14,7 @@ Adresse der Website: http://127.0.0.1:8000/admin/
 - Benutzername: admin
 - Passwort: wwwwMMMM
 
+Beispiel:
 - http://127.0.0.1:8000/admin/lib_app/book/4/change/
 - http://127.0.0.1:8000/admin/lib_app/movie/5/change/
 
