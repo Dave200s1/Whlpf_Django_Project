@@ -1,7 +1,4 @@
 # Library management
-![npm bundle size (version)](https://img.shields.io/badge/version-0.0.1-green) ![npm bundle size (version)](https://img.shields.io/badge/language-python3-blue) ![npm bundle size (version)](https://img.shields.io/badge/framework-django5-darkgreen) ![npm bundle size (version)](https://img.shields.io/badge/framework-boostrap5-purple)
-
-Copy the .txt file into the folder where you have cloned your repository, in order to be visible.
 
 Andrej Schreiner, David Stefanov, Daniel Wall, Justin Schiller
 
@@ -14,17 +11,47 @@ Andrej Schreiner, David Stefanov, Daniel Wall, Justin Schiller
 - Statrt server: py manage.py runserver
 
 Adresse der Website: http://127.0.0.1:8000/admin/
-Benutzername: admin
-Passwort: wwwwMMMM
+-Benutzername: admin
+- Passwort: wwwwMMMM
 
-http://127.0.0.1:8000/admin/lib_app/book/4/change/
-http://127.0.0.1:8000/admin/lib_app/movie/5/change/
+- http://127.0.0.1:8000/admin/lib_app/book/4/change/
+- http://127.0.0.1:8000/admin/lib_app/movie/5/change/
 
 http://127.0.0.1:8000/lib_app/
-Benutzername: a.schreiner
-Passwort: ddddKKKK
+- Benutzername: a.schreiner
+- Passwort: ddddKKKK
 
-Benutzername: d.stefanov
-Passwort: hhhhDDDD
+- Benutzername: d.stefanov
+- Passwort: hhhhDDDD
 
 Test für Models ausführen: python manage.py test tests.test_models
+
+
+##David:
+- ER und DB models entwerfen
+- Views schreiben
+- Testfälle für Views schreiben
+- Benutzer: Medien anzeigen, ausleihen, reservieren, suchen und filtern
+- Projektdokumentation (Readme)
+
+##Daniel:
+- Wireframe erstellen
+- Benutzer registrieren, an-, abmelden und Passwort zurücksetzen
+- User menu hinzufügen
+- Templates erweitern
+
+##Andrej:
+- Django einrichten
+- ER und DB models entwerfen
+- Models erstellen
+- Testdaten für die Datenbank erstellen (JSON)
+- Testfälle für Models schreiben
+- Administrator-Katalogs: Medien, Benutzer, Empfehlungen, Bewertungen
+- Bootstrap einbauen und erstes Basetemplate anlegen
+- Projektdokumentation (Readme)
+
+##Justin:
+- URL-Lists vorbereiten
+- Benutzer: Empfehlungen anzeigen
+- Benutzer: Bewertungen und Rezensionen
+- Zusätzliche Django Projekt Dokumentation (PDF)
