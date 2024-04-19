@@ -34,7 +34,7 @@ Test für Models ausführen: python manage.py test tests.test_models
 - Testdaten für die Datenbank erstellen (JSON)
 - Testfälle für Models schreiben
 - Administrator-Katalogs: Medien, Benutzer usw. suchen und filtern (admin part)
-- Bootstrap einbauen und erstes Basetemplate anlegen
+- Bootstrap einbauen und erstes Basetemplate anlegen, URLs anpassen
 - Projektdokumentation (Readme)
 
 ## David
@@ -48,7 +48,7 @@ Test für Models ausführen: python manage.py test tests.test_models
 - Wireframe erstellen
 - Benutzer registrieren, an-, abmelden und Passwort zurücksetzen
 - User menu hinzufügen
-- Templates erweitern
+- Templates erstellen
 
 ## Justin
 - URL-Lists vorbereiten
