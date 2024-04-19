@@ -54,4 +54,5 @@ Test für Models ausführen: python manage.py test tests.test_models
 - URL-Lists vorbereiten
 - Benutzer: Empfehlungen anzeigen
 - Benutzer: Bewertungen und Rezensionen
-- Zusätzliche Django Projekt Dokumentation (PDF)
+- Zusätzliche Django Projekt Dokumentation ( [Django Projekt Dokumentation.pdf](https://github.com/Dave200s1/Whlpf_Django_Project/blob/main/docs/general/Django%20Projekt%20Dokumentation.pdf) )
+
